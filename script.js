@@ -1,15 +1,16 @@
-function solution (input) {
-    var obj = {};
-    for (let i = 0; i < input.length; i++) {
-        if (obj.hasOwnProperty(input[i])) {
-            obj[input[i]] += 1;
-        } else {
-            obj[input[i]] = 1;
-        }
+function fab (str){
+  var obj = {};
+  for(let i=0;i<str.length;i++){
+    if(obj[str[i]]){
+      obj[str[i]]++;
     }
-    for (let i = 0; i < input.length; i++) {
-        if (obj[input[i]] === 1) {
-            return input[i];
-        }
+    else{
+      obj[str[i]] = 1;
     }
+  }
+  for(let i =0; i<str.length;i++){
+    if(obj[str[i]]===1){
+      return str[i];
+    }
+  }
 }
